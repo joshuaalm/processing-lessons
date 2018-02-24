@@ -27,7 +27,7 @@ setup = function() {
   __setup();
 
   if (!__autorun) { noLoop(); }
-  canvas.mouseClicked(function() {__clicked = true; __parent.focusExample(window)});
-  canvas.touchStarted(function() {__clicked = true; __parent.focusExample(window)});
+//  canvas.mouseClicked(function() {__clicked = true; __parent.focusExample(window)});
+//  canvas.touchStarted(function() {__clicked = true; __parent.focusExample(window)});
   __ready = true;
 }
