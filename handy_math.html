@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<title>Handy Math</title>
+<link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Fredericka+the+Great|Open+Sans:300,400|Roboto+Mono:300" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<div id="header"><div class="example" data-embed="math/distance"></div></div>
+<div id="main">
+
+<h1>Handy Math</h1>
+<p><a href="index.html">Sketching with Math and Quasi Physics</a></p>
+<h2>Sine, Cosine and Tangent</h2>
+
+<div class="math-wrapper">
+<p>$$\mathrm{sine}=\frac{\mathrm{opposite}}{\mathrm{hypotenuse}}$$</p>
+<p>$$\mathrm{cosine}=\frac{\mathrm{adjacent}}{\mathrm{hypotenuse}}$$</p>
+<p>$$\mathrm{tangent}=\frac{\mathrm{sine}}{\mathrm{cosine}}$$</p>
+</div>
+<p>* Note that p5.js is based on the screen coordinate system in which y increase from top to bottom. The opposite is flipped by multiplying -1 in the rendering below.</p>
+<div class="example" data-embed="math/sine_cosine" data-edit="http://codepen.io/kynd/pen/oYVPbz"></div>
+
+
+<h2>Rotate 2D points</h2>
+
+<div class="math-wrapper">
+<p>$$\begin{bmatrix}x'\\y'\end{bmatrix}=\begin{bmatrix}\cos\theta&-\sin\theta\\\sin\theta&\cos\theta\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}$$</p>
+</div>
+<div class="example" data-embed="math/rotate2d" data-edit='https://codepen.io/kynd/pen/vmvzVM'></div>
+<h3>Learn more</h3>
+<p><a href="http://www.alanzucconi.com/2016/02/03/2d-rotations/" target="_blank">A Gentle Primer on 2D Rotations</a></p>
+
+<h2 id="distance">Euclidean distance between two points</h2>
+
+<div class="math-wrapper">
+<h3>Two dimensions</h3>
+<p>$$p=(p_x,p_y),\;q=(q_x,q_y)$$</p>
+<p>$$\mathrm{distance}(p,q)=\sqrt{(p_x-q_x)^2+(p_y-q_y)^2}$$</p>
+
+<h3>n dimensions</h3>
+<p>$$p=(p_1,p_2\cdots,p_n),\;q=(q_1,q_2\cdots,q_n)$$</p>
+<p>$$\mathrm{distance}(p,q)=\sqrt{(p_1-q_1)^2+(p_2-q_2)^2+\cdots+(p_n-q_n)^2}=\sqrt{\sum_{i=1}^n(p_i+q_i)^2}$$</p>
+</div>
+<div class="example" data-embed="math/distance" data-edit='https://codepen.io/kynd/pen/oWJPJJ'></div>
+
+
+<h2>Perspective Projection (Fixed Camera)</h2>
+
+<p>\(\lbrack x,y,z\rbrack\) projects to \(\left[x\frac{\displaystyle d_1}{\displaystyle d_2},y\frac{\displaystyle d_1}{\displaystyle d_2}\right]\)</p>
+<p>
+<dl>
+  <dt>\(d_1=\) Focal length</dt>
+  <dd>the axial distance from the camera center to the image plane</dd>
+  <dt>\(d_2=\)  Subject distance</dt>
+  <dd>the axial distance from the camera center to the subject</dd>
+</dl>
+</p>
+
+<div class="example" data-embed="math/perspective" data-edit='https://codepen.io/kynd/pen/pPqOYP'></div>
+
+
+<h2 id="dot_product">Dot Product</h2>
+<h3>Two dimensions</h3>
+<div class="math-wrapper">
+<p>$${\boldsymbol v}_\mathbf1=\lbrack x_1,y_1\rbrack,\hspace{8px}{\boldsymbol v}_\mathbf2=\lbrack x_2,y_2\rbrack$$</p>
+<p>$${\boldsymbol v}_\mathbf1\cdot{\boldsymbol v}_\mathbf2=x_1x_2+y_1y_2$$</p>
+</div>
+<h3>n dimensions</h3>
+<div class="math-wrapper">
+<p>$$\boldsymbol a=\lbrack a_1,a_2,a_3,\dots,a_n\rbrack,\hspace{8px}\boldsymbol b=\lbrack b_1,b_2,b_3,\dots,b_n\rbrack$$</p>
+<p>$$\boldsymbol a\cdot\boldsymbol b=a_1b_1+a_2b_2+a_3b_3\dots a_nb_n$$</p>
+</div>
+<p>
+<ul>
+  <li>Two non-zero vectors a and b are orthogonal if and only if a ⋅ b = 0.</li>
+  <li>If the dot product is positive, the angle between the vectors is less than 90&deg;.</li>
+  <li>If the dot product is negative, the angle between the vectors is more than 90&deg;.</li>
+</ul>
+</p>
+<div class="example" data-embed="math/dot_product" data-edit='https://codepen.io/kynd/pen/gWZdyb'></div>
+
+<h2>Cross Product</h2>
+<h3>3 dimensions</h3>
+<div class="math-wrapper">
+<p>$${\boldsymbol v}_\mathbf1=\lbrack x_1,y_1,z_1\rbrack,\;{\boldsymbol v}_\mathbf2=\lbrack x_2,y_2,z_2\rbrack$$</p>
+<p>$${\boldsymbol v}_\mathbf1\times{\boldsymbol v}_\mathbf2=\lbrack y_1z_2-z_1y_2,z_1x_2-x_1z_2,x_1y_2-y_1x_2\rbrack$$</p>
+</div>
+<p>
+  <ul>
+    <li>The cross product is orthogonal to both of the original vectors(v1 and v2), which implies the cross product is perpendicular to the plane defined by the original vectors.</li>
+    <li>If the cross product of two vectors is the zero vector, either one or both of the inputs is the zero vector, or they are parallel or antiparallel.</li>
+  </ul>
+</p>
+<div class="example" data-embed="math/cross_product" data-edit='https://codepen.io/kynd/pen/qmLMGQ'></div>
+
+<p><a href="index.html">index</a></p>
+<footer><a href="https://twitter.com/kyndinfo">kynd</a> 2017 | Please suggest edits and/or better code at <a href="https://github.com/kynd/p5sketches">Github</a></footer>
+</div>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/vs.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+
+<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+<script src="js/main.js" type="text/javascript"></script>
+</body>
+</html>

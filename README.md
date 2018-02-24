@@ -1,2 +1,5 @@
-# processing-lessons
-Lesson on using p5.js for animation and interactivity
+# p5sketches
+
+sketches in p5.js
+
+https://kynd.github.io/p5sketches/index.html
