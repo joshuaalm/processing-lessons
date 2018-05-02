@@ -2,4 +2,4 @@
 
 sketches in p5.js
 
-https://kynd.github.io/p5sketches/index.html
+https://joshuaalm.github.io/processing-lessons/index.html
